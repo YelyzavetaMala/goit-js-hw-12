@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-   
-
+  <form id="searchForm">
+    <label for="searchQuery"></label>
+    <input type="text" id="searchQuery" name="searchQuery" required>
+    <button type="submit">Search</button>
+  </form>
+  <div class="gallery"></div>
+  </div>
+  <button id="loadMoreBtn" style="display: none;">Load more</button>
+  <div id="loadingIndicator" style="display: none;">Loading...</div>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
