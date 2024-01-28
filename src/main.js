@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderImages(data.hits);
             } else {
                 appendImages(data.hits);
+                scrollPageSmoothly(getGalleryCardHeight());
             }
                 hideLoadingIndicator();
         } catch (error) {
@@ -157,4 +158,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function hideLoadingIndicator() {
     loadingIndicator.style.display = 'none';
     }
+
+function getGalleryCardHeight() {
+    const galleryCard = document.querySelector(".image-card");
+    const cardRect = galleryCard.getBoundingClientRect();
+    return cardRect.height;
+  }
+
+  function scrollPageSmoothly(scrollDistance) {
+    window.scrollBy({
+      top: scrollDistance,
+      behavior: "smooth",
+    });
+  }
+
   });
+
